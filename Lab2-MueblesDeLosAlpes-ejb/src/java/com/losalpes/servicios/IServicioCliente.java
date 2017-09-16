@@ -13,11 +13,13 @@ package com.losalpes.servicios;
 
 import com.losalpes.bos.Cliente;
 import java.util.List;
+import javax.ejb.Local;
 
 
 /**
  * Contrato funcional de los servicios que se le prestan al catálogo
  */
+@Local
 public interface IServicioCliente
 {
 

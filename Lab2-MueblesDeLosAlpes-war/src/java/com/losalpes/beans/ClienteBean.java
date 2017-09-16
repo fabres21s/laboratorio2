@@ -21,6 +21,7 @@ import com.losalpes.servicios.ServicioCatalogoMock;
 import com.losalpes.servicios.ServicioClienteMock;
 import java.util.Arrays;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.SelectItem;
@@ -49,6 +50,8 @@ public class ClienteBean
      */
     private IServicioCliente servicioCliente;
 
+ 
+    
     //-----------------------------------------------------------
     // Constructor
     //-----------------------------------------------------------

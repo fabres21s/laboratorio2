@@ -5,6 +5,8 @@
  */
 package com.losalpes.bos;
 
+import java.util.List;
+
 /**
  *
  * @author fabio
@@ -22,6 +24,8 @@ public class Cliente {
     private String pais;
     private String profesion;
     private String email;
+    
+    private List<Compra> compras;
 
     /**
      * @return the tipoDocumento
@@ -175,6 +179,20 @@ public class Cliente {
      */
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    /**
+     * @return the compras
+     */
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    /**
+     * @param compras the compras to set
+     */
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
     }
     
             

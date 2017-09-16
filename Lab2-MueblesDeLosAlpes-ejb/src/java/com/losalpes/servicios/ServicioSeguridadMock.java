@@ -47,6 +47,7 @@ public class ServicioSeguridadMock implements IServicioSeguridad
 
         //Agrega usuarios al sistema
         usuarios.add(new Usuario("admin","adminadmin",TipoUsuario.ADMINISTRADOR));
+        usuarios.add(new Usuario("fabio","andres",TipoUsuario.ADMINISTRADOR));
         usuarios.add(new Usuario("client","clientclient",TipoUsuario.CLIENTE));
 
     }

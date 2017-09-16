@@ -18,13 +18,14 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.ejb.Stateless;
 
 
 /**
  * Implementacion de los servicios del catalogo de muebles que se le prestan al sistema. [Mock Object]
  * 
  */
-
+@Stateless
 public class ServicioClienteMock implements IServicioCliente
 {
 
@@ -78,7 +79,4 @@ public class ServicioClienteMock implements IServicioCliente
         clientes.remove(cliente);
         setDocumentos.remove(cliente.getNumeroDocumento());
     }
-
-
-
 }
