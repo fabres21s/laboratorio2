@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        Document: clientes
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/main-template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:param name="titulo" value="Catálogo de muebles" />
+    <ui:define name="body">
+        <h:form>
+
+            <!-- Panel para agregar un nuevo mueble -->
+            <h:panelGroup>
+                
+                <h:panelGrid>
+                    <h:selectOneMenu value="#{ClientesBean.cliente.tipo}">
+                        <f:selectItems value="#{ClientesBean.tiposClientes}" />
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtNumero"
+                                     value="Número de documento"/>
+                    <h:inputText id="TxtNumero"
+                                   size="20"
+                                   maxlength="20"
+                                   label="Numero"
+                                   value="#{ClientesBean.cliente.numero}"
+                                   required="true"
+                                   >
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    <h:message id="numMsg" for="TxtNumero" />
+                </h:panelGrid>
+
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtNombre"
+                                     value="Nombre completo del cliente" />
+                    <h:inputText id="TxtNombre"
+                                   maxlength="20"
+                                   size="20"
+                                   value="#{ClientesBean.cliente.nombre}"
+                                   label="Nombre"
+                                   required="true">
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    <h:message id="nomMsg" for="TxtNombre" />
+                </h:panelGrid>
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtTelR"
+                                     value="Teléfono de residencia" />
+                    <h:inputText id="TxtTelR"
+                                   maxlength="20"
+                                   size="20"
+                                   value="#{ClientesBean.cliente.telefonoR}"
+                                   label="TelefonoR"
+                                   required="true">
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    <h:message id="telMsg" for="TxtTelR" />
+                </h:panelGrid>
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtTelM"
+                                     value="Teléfono móvil" />
+                    <h:inputText id="TxtTelM"
+                                   maxlength="20"
+                                   size="20"
+                                   value="#{ClientesBean.cliente.telefonoM}"
+                                   label="TelefonoM"
+                                   required="false">
+                        <f:validateLength minimum="0"/>
+                    </h:inputText>
+                    <h:message id="celMsg" for="TxtTelM" />
+                </h:panelGrid>
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtDir"
+                                     value="Dirección del cliente" />
+                    <h:inputText id="TxtDir"
+                                   maxlength="20"
+                                   size="20"
+                                   value="#{ClientesBean.cliente.direccion}"
+                                   label="Direccion"
+                                   required="true">
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    <h:message id="dirMsg" for="TxtDir" />
+                </h:panelGrid>
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtCiu"
+                                     value="Ciudad" />
+                    <h:inputText id="TxtCiu"
+                                   maxlength="20"
+                                   size="20"
+                                   value="#{ClientesBean.cliente.ciudad}"
+                                   label="Ciudad"
+                                   required="true">
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    <h:message id="ciuMsg" for="TxtCiu" />
+                </h:panelGrid>
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtDep"
+                                     value="Departamento" />
+                    <h:inputText id="TxtDep"
+                                   maxlength="20"
+                                   size="20"
+                                   value="#{ClientesBean.cliente.departamento}"
+                                   label="Departamento"
+                                   required="true">
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    <h:message id="depMsg" for="TxtDep" />
+                </h:panelGrid>
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtPais"
+                                     value="País" />
+                    <h:inputText id="TxtPais"
+                                   maxlength="20"
+                                   size="20"
+                                   value="#{ClientesBean.cliente.pais}"
+                                   label="Pais"
+                                   required="true">
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    <h:message id="paisMsg" for="TxtPais" />
+                </h:panelGrid>
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtPro"
+                                     value="Profesión" />
+                    <h:inputText id="TxtPro"
+                                   maxlength="20"
+                                   size="20"
+                                   value="#{ClientesBean.cliente.profesion}"
+                                   label="Profesion"
+                                   required="false">
+                        <f:validateLength minimum="0"/>
+                    </h:inputText>
+                    <h:message id="profMsg" for="TxtPro" />
+                </h:panelGrid>
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtEma"
+                                     value="E-mail" />
+                    <h:inputText id="TxtEma"
+                                   maxlength="20"
+                                   size="20"
+                                   value="#{ClientesBean.cliente.email}"
+                                   label="Email"
+                                   required="true">
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    <h:message id="emaMsg" for="TxtEma" />
+                </h:panelGrid>
+
+                <h:commandButton value="Agregar" action="#{ClientesBean.agregarCliente}"  />
+                <h:commandButton value="Limpiar" action="#{ClientesBean.limpiar}" />
+                <h:commandButton onclick="if (! confirm('Está seguro de eliminar a este cliente?')) return false"
+                    value="Eliminar" action="#{ClientesBean.eliminarCliente}" >
+                </h:commandButton>
+            </h:panelGroup>
+            
+        </h:form>
+        <h:form>
+            
+
+                <!-- Se crea una tabla donde se presentan los muebles del sistema -->
+                <p:dataTable
+                    id="data"
+                    value="#{ClientesBean.clientes}"
+                    var="file"
+                    scrollable="false"
+                    scrollHeight="2000px"
+                    paginator="true"
+                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                    resizableColumns="true"
+                    rows="5"
+                    emptyMessage="No se encontraron clientes con esas especificaciones">
+
+                           
+                    <p:column headerText="Tipo de documento" sortBy="#{file.tipo}" width="100">
+                        <h:outputText value="#{file.tipo}" />
+                    </p:column>
+                    
+                    <p:column filterBy="#{file.numero}" headerText="Número de documento" width="80" filterMatchMode="contains">
+                        <h:outputText value="#{file.numero}" />
+                    </p:column>
+                    
+                    <p:column filterBy="#{file.nombre}" headerText="Nombre completo" width="100" filterMatchMode="contains">
+                        <h:outputText value="#{file.nombre}" />
+                    </p:column>
+                    
+                    <p:column filterBy="#{file.telefonoR}" headerText="Teléfono de residencia" width="100" filterMatchMode="contains">
+                        <h:outputText value="#{file.telefonoR}" />
+                    </p:column>
+                    
+                    <p:column filterBy="#{file.telefonoM}" headerText="Teléfono móvil" width="100" filterMatchMode="contains">
+                        <h:outputText value="#{file.telefonoM}" />
+                    </p:column>
+                    
+                    <p:column filterBy="#{file.direccion}" headerText="Dirección" width="100" filterMatchMode="contains">
+                        <h:outputText value="#{file.direccion}" />
+                    </p:column>
+                    
+                    <p:column filterBy="#{file.ciudad}" headerText="Ciudad" width="80" filterMatchMode="contains">
+                        <h:outputText value="#{file.ciudad}" />
+                    </p:column>
+                    
+                    <p:column filterBy="#{file.departamento}" headerText="Departamento" width="100" filterMatchMode="contains">
+                        <h:outputText value="#{file.departamento}" />
+                    </p:column>
+                    
+                    <p:column filterBy="#{file.pais}" headerText="País" width="80" filterMatchMode="contains">
+                        <h:outputText value="#{file.pais}" />
+                    </p:column>
+                    
+                    <p:column filterBy="#{file.profesion}" headerText="Profesión" width="100" filterMatchMode="contains">
+                        <h:outputText value="#{file.profesion}" />
+                    </p:column>
+                    
+                    <p:column filterBy="#{file.email}" headerText="E-mail" width="100" filterMatchMode="contains">
+                        <h:outputText value="#{file.email}" />
+                    </p:column>
+ 
+                </p:dataTable>
+
+        </h:form>
+
+    </ui:define>
+
+
+</ui:composition>
