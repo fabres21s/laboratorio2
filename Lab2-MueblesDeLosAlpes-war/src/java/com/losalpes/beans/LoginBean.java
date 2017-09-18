@@ -12,6 +12,7 @@
 
 package com.losalpes.beans;
 
+import com.losalpes.bos.Cliente;
 import com.losalpes.bos.TipoUsuario;
 import com.losalpes.bos.Usuario;
 import com.losalpes.excepciones.AutenticacionException;
@@ -46,7 +47,7 @@ public class LoginBean
     /**
      * Relación con la interfaz adecuada para la autenticación de usuarios
      */
-    private IServicioSeguridad servicio;
+    
 
     /**
      * Determina si existe error o no
@@ -63,7 +64,7 @@ public class LoginBean
     public LoginBean()
     {
         error=false;
-        servicio=new ServicioSeguridadMock();
+        
     }
 
     //-----------------------------------------------------------
@@ -79,14 +80,22 @@ public class LoginBean
        
         try
         {
-            Usuario user = servicio.login(usuario, contraseña);
+            Usuario user = Singleton.getInstance().getServicioSeguridad().login(usuario, contraseña);
             if (user.getTipo() == TipoUsuario.ADMINISTRADOR)
             {
-                return "catalogo.xhtml";
+                
+                return "clientes.xhtml";
+            }
+            else if(user.getTipo() == TipoUsuario.CLIENTE)
+            {
+                Cliente cliente = new Cliente();
+                cliente.setNumero(usuario);
+                Singleton.getInstance().setCliente(cliente);
+                return "compra.xhtml";
             }
             else
             {
-                return "compra.xhtml";
+                return "";
             }
         }
         catch (AutenticacionException ex)

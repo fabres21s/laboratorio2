@@ -1,200 +1,199 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.losalpes.bos;
-
-import java.util.List;
 
 /**
  *
- * @author fabio
+ * @author Fabio Sierra, Mario Vélez
  */
-public class Cliente {
+
+/**
+ * Clase que representa la información de un cliente en el sistema
+ */
+public class Cliente
+{
+    /**
+     * -------------------------------------------------------------------------
+     * Atributos
+     * -------------------------------------------------------------------------
+     */
     
-    private String tipoDocumento;
-    private String numeroDocumento;
-    private String nombreCompleto;
-    private String telefono;
-    private String celular;
+    //Tipo de documento
+    private TipoDocumento tipo;
+    
+    //Número de documento
+    private String numero;
+    
+    //Nombre completo del cliente
+    private String nombre;
+    
+    //Telefono de residencia del cliente
+    private String telefonoR;
+    
+    //Telefono móvil del cliente
+    private String telefonoM;
+        
+    //Dirección del cliente
     private String direccion;
+    
+    //Ciudad del cliente
     private String ciudad;
+    
+    //Departamento del cliente
     private String departamento;
+    
+    //Pais del cliente
     private String pais;
+    
+    //Profesión del cliente
     private String profesion;
+    
+    //Email del cliente
     private String email;
     
-    private List<Compra> compras;
-
+    //password
+    private String password;
+    
     /**
-     * @return the tipoDocumento
+     * Constructor sin argumentos de la clase
      */
-    public String getTipoDocumento() {
-        return tipoDocumento;
+    public Cliente() 
+    {
+
+    }
+    
+    /**
+     * Constructor de la clase. Inicializa los atributos con los valores que ingresan por parametro.
+     * @param tipo Tipo de documento
+     * @param numero número de documento
+     * @param nombre nombre del clientes
+     * @param telefonoR telefono de residencia del cliente
+     * @param telefonoM telefono movil del cliente
+     * @param direccion direccion del cliente
+     * @param ciudad ciudad del cliente
+     * @param departamento departamento del cliente
+     * @param pais pais del cliente
+     * @param profesion profesion del cliente
+     * @param email email del cliente
+     */
+    
+    public Cliente(TipoDocumento tipo, String numero, String nombre, String telefonoR, String telefonoM, String direccion, String ciudad, String departamento, String pais, String profesion, String email)
+    {
+        this.tipo = tipo;
+        this.numero = numero;
+        this.nombre = nombre;
+        this.telefonoR = telefonoR;
+        this.telefonoM = telefonoM;
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+        this.departamento = departamento;
+        this.pais = pais;
+        this.profesion = profesion;
+        this.email = email;
     }
 
     /**
-     * @param tipoDocumento the tipoDocumento to set
+     * -------------------------------------------------------------------------
+     * Getters y Setters
+     * -------------------------------------------------------------------------
      */
-    public void setTipoDocumento(String tipoDocumento) {
-        this.tipoDocumento = tipoDocumento;
+    public TipoDocumento getTipo() {
+        return tipo;
     }
 
-    /**
-     * @return the numeroDocumento
-     */
-    public String getNumeroDocumento() {
-        return numeroDocumento;
+    public void setTipo(TipoDocumento tipo) {
+        this.tipo = tipo;
     }
 
-    /**
-     * @param numeroDocumento the numeroDocumento to set
-     */
-    public void setNumeroDocumento(String numeroDocumento) {
-        this.numeroDocumento = numeroDocumento;
+    public String getNumero() {
+        return numero;
     }
 
-    /**
-     * @return the nombreCompleto
-     */
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
-    /**
-     * @param nombreCompleto the nombreCompleto to set
-     */
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public String getNombre() {
+        return nombre;
     }
 
-    /**
-     * @return the telefono
-     */
-    public String getTelefono() {
-        return telefono;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    /**
-     * @param telefono the telefono to set
-     */
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public String getTelefonoR() {
+        return telefonoR;
     }
 
-    /**
-     * @return the celular
-     */
-    public String getCelular() {
-        return celular;
+    public void setTelefonoR(String telefonoR) {
+        this.telefonoR = telefonoR;
     }
 
-    /**
-     * @param celular the celular to set
-     */
-    public void setCelular(String celular) {
-        this.celular = celular;
+    public String getTelefonoM() {
+        return telefonoM;
     }
 
-    /**
-     * @return the direccion
-     */
+    public void setTelefonoM(String telefonoM) {
+        this.telefonoM = telefonoM;
+    }
+
     public String getDireccion() {
         return direccion;
     }
 
-    /**
-     * @param direccion the direccion to set
-     */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
-    /**
-     * @return the ciudad
-     */
     public String getCiudad() {
         return ciudad;
     }
 
-    /**
-     * @param ciudad the ciudad to set
-     */
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
 
-    /**
-     * @return the departamento
-     */
     public String getDepartamento() {
         return departamento;
     }
 
-    /**
-     * @param departamento the departamento to set
-     */
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
 
-    /**
-     * @return the pais
-     */
     public String getPais() {
         return pais;
     }
 
-    /**
-     * @param pais the pais to set
-     */
     public void setPais(String pais) {
         this.pais = pais;
     }
 
-    /**
-     * @return the profesion
-     */
     public String getProfesion() {
         return profesion;
     }
 
-    /**
-     * @param profesion the profesion to set
-     */
     public void setProfesion(String profesion) {
         this.profesion = profesion;
     }
 
-    /**
-     * @return the email
-     */
     public String getEmail() {
         return email;
     }
 
-    /**
-     * @param email the email to set
-     */
     public void setEmail(String email) {
         this.email = email;
     }
 
     /**
-     * @return the compras
+     * @return the password
      */
-    public List<Compra> getCompras() {
-        return compras;
+    public String getPassword() {
+        return password;
     }
 
     /**
-     * @param compras the compras to set
+     * @param password the password to set
      */
-    public void setCompras(List<Compra> compras) {
-        this.compras = compras;
+    public void setPassword(String password) {
+        this.password = password;
     }
-    
-            
-    
 }

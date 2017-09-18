@@ -35,6 +35,7 @@ public class Usuario
      * Tipo de usuario
      */
     private TipoUsuario tipo;
+    
 
     //-----------------------------------------------------------
     // Constructores

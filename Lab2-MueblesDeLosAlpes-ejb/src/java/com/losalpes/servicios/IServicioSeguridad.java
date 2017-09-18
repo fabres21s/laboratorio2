@@ -22,6 +22,7 @@ import com.losalpes.excepciones.AutenticacionException;
 public interface IServicioSeguridad
 {
 
+    public void agregarUsuario(Usuario usuario);
     /**
      * Registra el ingreso de un usuario al sistema.
      * @param nombre Login del usuario que quiere ingresar al sistema.

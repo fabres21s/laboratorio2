@@ -27,5 +27,8 @@ public interface IServicioCompra
 
     public void agregarCompra(Compra compra);
 
+    public boolean validarCompra(String numero);
+
+
     
 }

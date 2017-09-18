@@ -38,5 +38,16 @@ public class ServicioCompra implements IServicioCompra
         compras.add(compra);
     }
 
+    @Override
+    public boolean validarCompra(String numero) {
+        for (Compra compra : compras) {
+            if (compra.getCliente().getNumero().equals(numero)) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+
    
 }

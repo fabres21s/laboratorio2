@@ -16,6 +16,7 @@ import com.losalpes.bos.Mueble;
 import com.losalpes.bos.TipoMueble;
 import com.losalpes.servicios.IServicioCatalogo;
 import com.losalpes.servicios.ServicioCatalogoMock;
+import java.io.Serializable;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -28,7 +29,7 @@ import javax.faces.model.SelectItem;
  */
 @ManagedBean
 @SessionScoped
-public class CatalogoBean
+public class CatalogoBean implements Serializable
 {
 
     //-----------------------------------------------------------
@@ -86,7 +87,7 @@ public class CatalogoBean
      */
     public List<Mueble> getMuebles()
     {
-       
+
         return catalogo.darMuebles();
     }
 
@@ -99,8 +100,6 @@ public class CatalogoBean
      */
     public void agregarMueble()
     {
-        
-        
         catalogo.agregarMueble(mueble);
         mueble=new Mueble();
     }

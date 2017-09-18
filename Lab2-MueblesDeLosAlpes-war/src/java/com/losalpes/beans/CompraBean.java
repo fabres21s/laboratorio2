@@ -51,7 +51,7 @@ public class CompraBean
     /**
      * Relación con la interfaz que provee los servicios necesarios del catálogo.
      */
-    private IServicioCompra servicioCompra;
+    
 
  
     
@@ -66,7 +66,7 @@ public class CompraBean
     {
         metodo = "";
         detalles = new ArrayList<Detalle>();
-        servicioCompra =new ServicioCompra();
+        
         totalPagar = 0;
     }
 
@@ -121,7 +121,8 @@ public class CompraBean
     
     public String realizarPago() {
         compra.setDetalles(detalles);
-        servicioCompra.agregarCompra(compra);
+        compra.setCliente(Singleton.getInstance().getCliente());
+        Singleton.getInstance().getServicioCompra().agregarCompra(compra);
         compra = new Compra();
         detalles.clear();
         totalPagar = 0;

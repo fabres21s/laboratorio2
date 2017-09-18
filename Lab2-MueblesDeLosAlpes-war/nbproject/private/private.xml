@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/fabio/git/ecos/componentes/Lab2-MueblesDeLosAlpes/Lab2-MueblesDeLosAlpes-war/src/java/com/losalpes/beans/ClienteBean.java</file>
+            <file>file:/Users/fabio/git/ecos/componentes/Lab2-MueblesDeLosAlpes/Lab2-MueblesDeLosAlpes-war/src/java/com/losalpes/beans/CompraBean.java</file>
+            <file>file:/Users/fabio/git/ecos/componentes/Lab2-MueblesDeLosAlpes/Lab2-MueblesDeLosAlpes-war/web/mostrar.xhtml</file>
+            <file>file:/Users/fabio/git/ecos/componentes/Lab2-MueblesDeLosAlpes/Lab2-MueblesDeLosAlpes-war/web/exito.xhtml</file>
+            <file>file:/Users/fabio/git/ecos/componentes/Lab2-MueblesDeLosAlpes/Lab2-MueblesDeLosAlpes-war/src/java/com/losalpes/beans/CatalogoBean.java</file>
+            <file>file:/Users/fabio/git/ecos/componentes/Lab2-MueblesDeLosAlpes/Lab2-MueblesDeLosAlpes-war/src/java/com/losalpes/beans/LoginBean.java</file>
+            <file>file:/Users/fabio/git/ecos/componentes/Lab2-MueblesDeLosAlpes/Lab2-MueblesDeLosAlpes-war/web/clientes.xhtml</file>
+            <file>file:/Users/fabio/git/ecos/componentes/Lab2-MueblesDeLosAlpes/Lab2-MueblesDeLosAlpes-war/src/java/com/losalpes/beans/ClientesBean.java</file>
+            <file>file:/Users/fabio/git/ecos/componentes/Lab2-MueblesDeLosAlpes/Lab2-MueblesDeLosAlpes-war/web/pagar.xhtml</file>
         </group>
     </open-files>
 </project-private>
