@@ -26,4 +26,10 @@ public interface IServicioCliente
      */
     public List<Cliente> darClientes();
     
+    /**
+     * Elimina un cliente del sistema
+     * @param cliente cliente a eliminar
+     */
+    public void eliminarCliente(Cliente cliente);
+    
 }

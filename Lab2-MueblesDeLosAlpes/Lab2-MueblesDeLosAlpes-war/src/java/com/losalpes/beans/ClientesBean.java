@@ -96,7 +96,8 @@ public class ClientesBean implements Serializable
      */
     public void eliminarCliente()
     {
-        
+        cliente.getNumero();
+        catalogoClientes.eliminarCliente(cliente);
     }
     
     /**

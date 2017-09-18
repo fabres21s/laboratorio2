@@ -165,9 +165,7 @@
 
                 <h:commandButton value="Agregar" action="#{ClientesBean.agregarCliente}"  />
                 <h:commandButton value="Limpiar" action="#{ClientesBean.limpiar}" />
-                <h:commandButton onclick="if (! confirm('Está seguro de eliminar a este cliente?')) return false"
-                    value="Eliminar" action="#{ClientesBean.eliminarCliente}" >
-                </h:commandButton>
+                
             </h:panelGroup>
             
         </h:form>
@@ -230,6 +228,12 @@
                     
                     <p:column filterBy="#{file.email}" headerText="E-mail" width="100" filterMatchMode="contains">
                         <h:outputText value="#{file.email}" />
+                    </p:column>
+                    
+                    <p:column width="100">
+                        <h:commandButton onclick="if (! confirm('Está seguro de eliminar a este cliente?')) return false"
+                                         value="Eliminar" action="#{ClientesBean.eliminarCliente}" >
+                        </h:commandButton>
                     </p:column>
  
                 </p:dataTable>

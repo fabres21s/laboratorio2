@@ -44,7 +44,7 @@ public class ServicioCatalogoClientesMock implements IServicioCliente
         clientes=new ArrayList<Cliente>();
         setDocumentos = new HashSet<String>();
 
-        //Agrega los muebles del sistema
+        //Agrega los clientes del sistema
         agregarCliente(new Cliente(TipoDocumento.CedulaDeCiudadania,"111111111","Mario Velez","2706746","31092391232","cra 123 #456 - 789","Cali","Valle","Colombia","Ingeniero Electronico","mf.velez@correo.com"));
         agregarCliente(new Cliente(TipoDocumento.CedulaDeCiudadania,"222222222","Fabio Sierra","12412312","3158498032","cra 987 #654 - 321","Bogota","Cundinamarca","Colombia","Ingeniero de Sistemas","f.sierra@correo.com"));
    
@@ -69,4 +69,10 @@ public class ServicioCatalogoClientesMock implements IServicioCliente
     {
         return clientes;
     }
+    
+    @Override
+    public void eliminarCliente(Cliente cliente) {
+        clientes.remove(cliente);
+        setDocumentos.remove(cliente.getNumero());
+}
 }
