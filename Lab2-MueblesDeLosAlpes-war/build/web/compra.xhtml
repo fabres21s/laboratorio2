@@ -23,6 +23,46 @@
 
             </h:panelGroup>
             
+            
+            
+             <!-- Se crea una tabla donde se presentan los muebles del sistema -->
+                <p:dataTable
+                    id="data"
+                    value="#{catalogoBean.muebles}"
+                    var="file"
+                    scrollable="false"
+                    scrollHeight="100px"
+                    paginator="true"
+                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                    resizableColumns="true"
+                    rows="5">
+
+                           
+                    <p:column headerText="Referencia" sortBy="#{file.referencia}">
+                        <h:outputText value="#{file.referencia}" />
+                    </p:column>
+                    
+                    <p:column headerText="Nombre">
+                        <h:outputText value="#{file.nombre}" />
+                    </p:column>
+                    
+                    <p:column headerText="Descripción">
+                        <h:outputText value="#{file.descripcion}" />
+                    </p:column>
+                    
+                    <p:column headerText="Tipo">
+                        <h:outputText value="#{file.tipo}" />
+                    </p:column>
+                    
+                    <p:column headerText="Ver">
+                     
+                    <h:commandButton value="Ver" action="#{compraBean.verMueble(file)}" />
+                </p:column>
+                    
+                </p:dataTable>
+            
+                <h:commandButton value="Ver Carrito" action="#{compraBean.verCarrito}" />
+            
         </h:form>
         
     </ui:define>

@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+    Document   : catalogo
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/main-template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:param name="titulo" value="Descripción de la venta" />
+    <ui:define name="body">
+        <h:form>
+
+            <h:outputLabel value="Descripción de la venta"></h:outputLabel> 
+            <!-- Panel para agregar un nuevo mueble -->
+            <h:panelGroup>
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="TxtReferencia"
+                                     value="Referencia"/>
+                    <h:inputText id="TxtReferencia" disabled="true"
+                                   size="20"
+                                   maxlength="20"
+                                   label="Referencia"
+                                   value="#{compraBean.compra.referencia}"
+                                   required="true"
+                                   >
+                        
+                    </h:inputText>
+                    <h:message id="nameMsg" for="TxtReferencia" />
+                </h:panelGrid>
+
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="txtValor"
+                                     value="Valor" />
+                    <h:inputText id="txtValor"
+                                   maxlength="20"
+                                   size="20"
+                                   value="#{compraBean.compra.total}"
+                                   label="Valor"
+                                   required="true"
+                                   disabled="true">
+                        
+                    </h:inputText>
+                    <h:message id="pwMsg" for="txtValor" />
+                </h:panelGrid>
+
+                
+                <h:panelGrid columns="1" width="100px"
+                               columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+
+                    <h:outputLabel for="TxtDescripcion" value="Descripción" />
+                    <h:inputTextarea id="TxtDescripcion"
+                                       value="#{compraBean.compra.descripcion}"
+                                       rows="4" style="width: 125px"
+                                       label="Descripción"
+                                       disabled="true"
+                                       >
+                        
+
+                    </h:inputTextarea>
+                    <h:message id="descMsg" for="TxtDescripcion" />
+
+                </h:panelGrid>
+                
+
+            </h:panelGroup>
+            
+            
+            
+            <h:outputLabel value="2. Seleccione la entidad con la que realizará su pago"></h:outputLabel> 
+            <h:panelGrid id="resourcePanel" columns="3" rules="all">
+                <h:panelGrid columns="1" rules="none">
+                    <h:commandButton image="./resources/img/pagar/americanexpress.png" action="#{compraBean.setMetodo('American Express')}"></h:commandButton>
+                       
+                </h:panelGrid>
+                
+                
+                <h:panelGrid columns="1" rules="none">
+                    <h:commandButton image="./resources/img/pagar/visa.png" action="#{compraBean.setMetodo('Visa')}"></h:commandButton>
+                       
+                </h:panelGrid>
+                
+                <h:panelGrid columns="1" rules="none">
+                    <h:commandButton image="./resources/img/pagar/mastercard.jpeg" action="#{compraBean.setMetodo('Master Card')}"></h:commandButton>
+                       
+                </h:panelGrid>
+            </h:panelGrid>
+            
+            <h:panelGrid id="resourcePanel2" columns="1" rules="all">
+                <h:panelGrid columns="1" rules="none">
+                    <h:commandButton image="./resources/img/pagar/pse.png" action="#{compraBean.setMetodo('Pago en línea')}"></h:commandButton>
+                       
+                </h:panelGrid>
+                
+
+            </h:panelGrid>
+            
+            
+            
+            
+            <h:outputLabel value="Entidad seleccionada #{compraBean.metodo}"></h:outputLabel> 
+            
+           
+            <h:panelGroup>
+
+
+
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="txtNombres"
+                                   value="Nombres y Apellidos (*)"/>
+                    <h:inputText id="txtDocumento"
+                                 size="20"
+                                 maxlength="20"
+                                 label="Nombres y Apellidos (*)"
+                                 value="#{compraBean.compra.nombre}"
+                                 required="true"
+                                 >
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    
+                </h:panelGrid>
+                
+                
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel 
+                                   value="Número de la Tarjeta (*)"/>
+                    <h:inputText id="txtNombre"
+                                 size="20"
+                                 maxlength="20"
+                                 label="Número de la tarjeta (*)"
+                                 value="#{compraBean.compra.numeroTarjeta}"
+                                 required="true"
+                                 >
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    
+                </h:panelGrid>
+                
+
+                 
+                 
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel 
+                                     value="Codigo(*)"/>
+                    <h:inputText id="txtCodigo"
+                                   size="20"
+                                   maxlength="20"
+                                   label="Código de seguridad"
+                                   value="#{compraBean.compra.codigo}"
+                                   required="true"
+                                   >
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                   
+                </h:panelGrid>
+                 
+                
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel 
+                                   value="Año de Expiracion"></h:outputLabel>
+                                     
+                   <h:selectOneMenu value="#{compraBean.compra.anho}">
+                        <f:selectItems value="#{compraBean.anhos}" />
+                    </h:selectOneMenu>
+                    
+                   
+                </h:panelGrid>
+                 
+                
+                 <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel 
+                                     value="Expiracion Mes"/>
+                   <h:selectOneMenu value="#{compraBean.compra.mes}">
+                        <f:selectItems value="#{compraBean.meses}" />
+                    </h:selectOneMenu>
+                    
+                </h:panelGrid>
+                 
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel 
+                                     value="Cuotas"/>
+                   <h:selectOneMenu value="#{compraBean.compra.cuotas}">
+                        <f:selectItems value="#{compraBean.cuotas}" />
+                    </h:selectOneMenu>
+                    
+                </h:panelGrid>
+             
+             <h:commandButton value="Pagar" action="#{compraBean.realizarPago}" />
+                <h:commandButton value="Regresar al carrito" action="#{compraBean.verCarrito}" />
+
+
+               
+            </h:panelGroup>
+            
+        </h:form>
+        
+
+    </ui:define>
+
+
+</ui:composition>

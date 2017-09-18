@@ -15,7 +15,7 @@ public class Detalle {
     private Compra compra;
     private Mueble mueble;
     private Integer cantidad;
-    private Double total;
+    private Integer total;
 
     /**
      * @return the compra
@@ -62,14 +62,14 @@ public class Detalle {
     /**
      * @return the total
      */
-    public Double getTotal() {
+    public Integer getTotal() {
         return total;
     }
 
     /**
      * @param total the total to set
      */
-    public void setTotal(Double total) {
+    public void setTotal(Integer total) {
         this.total = total;
     }
 }

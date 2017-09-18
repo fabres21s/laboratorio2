@@ -100,7 +100,7 @@ public class CatalogoBean
     public void agregarMueble()
     {
         
-        System.out.println("agregarMueble ::: "+this + " ::: "+catalogo);
+        
         catalogo.agregarMueble(mueble);
         mueble=new Mueble();
     }

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+    Document   : catalogo
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/main-template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:param name="titulo" value="Descripción de la venta" />
+    <ui:define name="body">
+        <h:form>
+
+            
+            <h:panelGroup>
+            <h:outputLabel value="Su compra se ha realizado exitosamente"></h:outputLabel> 
+            <!-- Panel para agregar un nuevo mueble -->
+         
+             
+             <h:commandButton value="Aceptar" action="#{compraBean.cancelar}" />
+                
+
+            </h:panelGroup>
+            
+        </h:form>
+        
+
+    </ui:define>
+
+
+</ui:composition>

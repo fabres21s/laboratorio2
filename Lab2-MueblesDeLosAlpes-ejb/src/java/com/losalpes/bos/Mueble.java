@@ -35,6 +35,11 @@ public class Mueble
      * Descripción del mueble.
      */
     private String descripcion;
+    
+    /**
+     * Precio unitario del mueble
+     */
+    private Integer precioUnitario;
 
     /**
      * Tipo de mueble.
@@ -65,12 +70,13 @@ public class Mueble
      * @param descripcion Descripión del mueble
      * @param tipo Tipo de mueble
      */
-    public Mueble(String referencia, String nombre, String descripcion, TipoMueble tipo)
+    public Mueble(String referencia, String nombre, String descripcion, TipoMueble tipo, Integer precioUnitario)
     {
         this.referencia = referencia;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tipo = tipo;
+        this.precioUnitario = precioUnitario;
     }
 
     //-----------------------------------------------------------
@@ -164,6 +170,20 @@ public class Mueble
     public void setSeleccion(boolean seleccion)
     {
         this.seleccion = seleccion;
+    }
+
+    /**
+     * @return the precioUnitario
+     */
+    public Integer getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    /**
+     * @param precioUnitario the precioUnitario to set
+     */
+    public void setPrecioUnitario(Integer precioUnitario) {
+        this.precioUnitario = precioUnitario;
     }
 
 
