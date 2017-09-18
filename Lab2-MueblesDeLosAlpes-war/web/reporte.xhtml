@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+    Document   : catalogo
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/main-template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:param name="titulo" value="Catálogo de muebles" />
+    <ui:define name="body">
+        <h:form>
+            
+             <p:menu>
+        
+       
+        <p:submenu label="Sitios">
+            <p:menuitem value="Reportes" outcome ="reporte.xhtml" icon="ui-icon-home"/>
+            <p:menuitem value="Muebles" outcome ="catalogo.xhtml" icon="ui-icon-home"/>
+            <p:menuitem value="Clientes" outcome ="clientes.xhtml" icon="ui-icon-home"/>
+        </p:submenu>
+    </p:menu>
+
+            <p:dataTable value="#{compraBean.compras}" var="compra">
+                
+                <p:column headerText="Referencia">
+                <h:outputLabel value=" #{compra.referencia} "></h:outputLabel>
+                </p:column>
+                
+                <p:column headerText="Fecha">
+                <h:outputLabel value="#{compra.fecha} "></h:outputLabel>
+                </p:column>
+                
+                <p:column headerText="Cliente">
+                <h:outputLabel value="#{compra.cliente.nombre} "></h:outputLabel>
+                </p:column>
+                
+                <p:column headerText="Forma de pago">
+                <h:outputLabel value="#{compra.metodo} "></h:outputLabel>
+                </p:column>
+                
+                <p:column headerText="Total">
+                <h:outputLabel value="#{compra.total} "></h:outputLabel>
+                </p:column>
+                
+                
+                
+            </p:dataTable>
+
+        </h:form>
+
+    </ui:define>
+
+
+</ui:composition>

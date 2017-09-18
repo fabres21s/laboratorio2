@@ -27,6 +27,7 @@ public class Compra {
     private String anho;
     private String mes;
     private Integer cuotas;
+    private String metodo;
     
     /**
      * @return the cliente
@@ -194,5 +195,19 @@ public class Compra {
      */
     public void setCuotas(Integer cuotas) {
         this.cuotas = cuotas;
+    }
+
+    /**
+     * @return the metodo
+     */
+    public String getMetodo() {
+        return metodo;
+    }
+
+    /**
+     * @param metodo the metodo to set
+     */
+    public void setMetodo(String metodo) {
+        this.metodo = metodo;
     }
 }

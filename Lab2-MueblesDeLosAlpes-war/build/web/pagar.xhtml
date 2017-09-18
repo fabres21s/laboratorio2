@@ -72,25 +72,25 @@
             <h:outputLabel value="2. Seleccione la entidad con la que realizará su pago"></h:outputLabel> 
             <h:panelGrid id="resourcePanel" columns="3" rules="all">
                 <h:panelGrid columns="1" rules="none">
-                    <h:commandButton image="./resources/img/pagar/americanexpress.png" action="#{compraBean.setMetodo('American Express')}"></h:commandButton>
+                    <h:commandButton image="./resources/img/pagar/americanexpress.png" action="#{compraBean.asignarMetodo('American Express')}"></h:commandButton>
                        
                 </h:panelGrid>
                 
                 
                 <h:panelGrid columns="1" rules="none">
-                    <h:commandButton image="./resources/img/pagar/visa.png" action="#{compraBean.setMetodo('Visa')}"></h:commandButton>
+                    <h:commandButton image="./resources/img/pagar/visa.png" action="#{compraBean.asignarMetodo('Visa')}"></h:commandButton>
                        
                 </h:panelGrid>
                 
                 <h:panelGrid columns="1" rules="none">
-                    <h:commandButton image="./resources/img/pagar/mastercard.jpeg" action="#{compraBean.setMetodo('Master Card')}"></h:commandButton>
+                    <h:commandButton image="./resources/img/pagar/mastercard.jpeg" action="#{compraBean.asignarMetodo('Master Card')}"></h:commandButton>
                        
                 </h:panelGrid>
             </h:panelGrid>
             
             <h:panelGrid id="resourcePanel2" columns="1" rules="all">
                 <h:panelGrid columns="1" rules="none">
-                    <h:commandButton image="./resources/img/pagar/pse.png" action="#{compraBean.setMetodo('Pago en línea')}"></h:commandButton>
+                    <h:commandButton image="./resources/img/pagar/pse.png" action="#{compraBean.asignarMetodo('Pago en línea')}"></h:commandButton>
                        
                 </h:panelGrid>
                 
@@ -100,7 +100,7 @@
             
             
             
-            <h:outputLabel value="Entidad seleccionada #{compraBean.metodo}"></h:outputLabel> 
+            <h:outputLabel value="#{compraBean.metodo}"></h:outputLabel> 
             
            
             <h:panelGroup>
@@ -109,7 +109,7 @@
 
                 
                 <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
-                    <h:outputLabel for="txtNombres"
+                    <h:outputLabel for="txtDocumento"
                                    value="Nombres y Apellidos (*)"/>
                     <h:inputText id="txtDocumento"
                                  size="20"

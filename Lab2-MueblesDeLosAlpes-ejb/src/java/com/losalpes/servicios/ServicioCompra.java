@@ -49,5 +49,9 @@ public class ServicioCompra implements IServicioCompra
         return true;
     }
 
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
    
 }

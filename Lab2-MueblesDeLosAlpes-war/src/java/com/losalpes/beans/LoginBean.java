@@ -90,6 +90,7 @@ public class LoginBean
             {
                 Cliente cliente = new Cliente();
                 cliente.setNumero(usuario);
+                cliente.setNombre(user.getNombre());
                 Singleton.getInstance().setCliente(cliente);
                 return "compra.xhtml";
             }
@@ -171,5 +172,11 @@ public class LoginBean
     public void cerrarPanelError()
     {
         error=false;
+    }
+    
+    
+    public String goTo(String page) {
+        System.out.println("slkjflsakfgsd" +page);
+        return page;
     }
 }

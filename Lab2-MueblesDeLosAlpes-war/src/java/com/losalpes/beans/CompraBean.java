@@ -18,6 +18,7 @@ import com.losalpes.bos.Mueble;
 import com.losalpes.servicios.IServicioCompra;
 import com.losalpes.servicios.ServicioCompra;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -64,9 +65,9 @@ public class CompraBean
      */
     public CompraBean()
     {
-        metodo = "";
+        metodo = "VISA";
         detalles = new ArrayList<Detalle>();
-        
+        compra = new Compra();
         totalPagar = 0;
     }
 
@@ -107,8 +108,10 @@ public class CompraBean
     
     public String pagar() {
         setCompra(new Compra());
+        getCompra().setFecha(new Date());
         getCompra().setReferencia(String.valueOf(System.currentTimeMillis()));
         getCompra().setTotal(totalPagar);
+        getCompra().setCliente(Singleton.getInstance().getCliente());
         StringBuffer descripcion = new StringBuffer();
         for (Detalle detalle : detalles) {
             descripcion.append(detalle.getCantidad() + " "+ detalle.getMueble().getDescripcion() + " - ");
@@ -121,6 +124,7 @@ public class CompraBean
     
     public String realizarPago() {
         compra.setDetalles(detalles);
+        compra.setMetodo(metodo);
         compra.setCliente(Singleton.getInstance().getCliente());
         Singleton.getInstance().getServicioCompra().agregarCompra(compra);
         compra = new Compra();
@@ -165,6 +169,10 @@ public class CompraBean
              sitems[i - 1] = new SelectItem(i);
         }
         return sitems;
+    }
+    
+    public List<Compra> getCompras() {
+        return Singleton.getInstance().getServicioCompra().getCompras();
     }
     
     /**
@@ -249,6 +257,11 @@ public class CompraBean
      */
     public void setMetodo(String metodo) {
         this.metodo = metodo;
+    }
+    
+    public void asignarMetodo(String metodo) {
+        System.out.println("asignando "+metodo);
+        setMetodo(metodo);
     }
 
 }

@@ -13,6 +13,17 @@
     <ui:define name="body">
         <h:form>
 
+            
+            <p:menu>
+        
+       
+        <p:submenu label="Sitios">
+            <p:menuitem value="Reportes" outcome ="reporte.xhtml" icon="ui-icon-home"/>
+            <p:menuitem value="Muebles" outcome ="catalogo.xhtml" icon="ui-icon-home"/>
+            <p:menuitem value="Clientes" outcome ="clientes.xhtml" icon="ui-icon-home"/>
+        </p:submenu>
+    </p:menu>
+            
             <!-- Panel para agregar un nuevo mueble -->
             <h:panelGroup>
                 <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
@@ -64,6 +75,26 @@
                         <f:selectItems value="#{catalogoBean.tiposMuebles}" />
                     </h:selectOneMenu>
                 </h:panelGrid>
+                
+                
+                <!--Precio unitario -->
+                
+                <h:panelGrid width="100px" columns="1" columnClasses="pnlGrdClass, pnlGrdClass, pnlGrdClassLong">
+                    <h:outputLabel for="txtPrecioUnitario"
+                                     value="Precio unitario"/>
+                    <h:inputText id="txtPrecioUnitario"
+                                   size="20"
+                                   maxlength="20"
+                                   label="Referencia"
+                                   value="#{catalogoBean.mueble.precioUnitario}"
+                                   required="true"
+                                   >
+                        <f:validateLength minimum="1"/>
+                    </h:inputText>
+                    <h:message id="precioUnitarioMsg" for="txtPrecioUnitario" />
+                </h:panelGrid>
+                
+                <!-- Fin precio unitario-->
 
                 <h:commandButton value="Agregar" action="#{catalogoBean.agregarMueble}" />
                 <h:commandButton value="Limpiar" action="#{catalogoBean.limpiar}" />
@@ -100,6 +131,10 @@
                     
                     <p:column headerText="Tipo">
                         <h:outputText value="#{file.tipo}" />
+                    </p:column>
+                    
+                    <p:column headerText="Precio unitario">
+                        <h:outputText value="#{file.precioUnitario}" />
                     </p:column>
                     
                 </p:dataTable>
